@@ -4,14 +4,16 @@
 
 A = int(input("Введите значение числа А - "))
 B = int(input("Введите значение числа B - "))
-def power (A, B):
+def exponent (A, B):
+  if B < 0:
+    return 1/exponent(A, -B)
   if B == 0:
     return 1
   if B > 0:
-    return (A * power(A, B-1))
+    return (A * exponent(A, B-1))
 
 
-print(f'Результатом возведения числа {A} в степень {B} будет - {power(A, B)}')
+print(f'Результатом возведения числа {A} в степень {B} будет - {exponent(A, B)}')
   
   
 
